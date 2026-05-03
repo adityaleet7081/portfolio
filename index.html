@@ -595,9 +595,15 @@
             pointer-events: none;
             animation: scanline 8s linear infinite;
         }
+
         @keyframes scanline {
-            0% { top: -2px; }
-            100% { top: 100vh; }
+            0% {
+                top: -2px;
+            }
+
+            100% {
+                top: 100vh;
+            }
         }
 
         /* Cursor trail */
@@ -619,9 +625,10 @@
             transform-style: preserve-3d;
             perspective: 800px;
         }
+
         .achievement-card:hover {
             transform: rotateY(10deg) rotateX(5deg) translateY(-8px) !important;
-            box-shadow: -10px 10px 40px rgba(0,229,255,0.2), 0 0 60px rgba(0,229,255,0.08);
+            box-shadow: -10px 10px 40px rgba(0, 229, 255, 0.2), 0 0 60px rgba(0, 229, 255, 0.08);
         }
 
         /* Magnetic button styles */
@@ -643,7 +650,10 @@
             z-index: 0;
             pointer-events: none;
         }
-        #skills { position: relative; }
+
+        #skills {
+            position: relative;
+        }
 
         /* Section dividers */
         .section-divider {
@@ -652,6 +662,7 @@
             position: relative;
             overflow: hidden;
         }
+
         .section-divider::before {
             content: '';
             position: absolute;
@@ -659,25 +670,57 @@
             height: 100%;
             top: 0;
             left: -50%;
-            background: radial-gradient(ellipse at center, rgba(0,229,255,0.08) 0%, transparent 70%);
+            background: radial-gradient(ellipse at center, rgba(0, 229, 255, 0.08) 0%, transparent 70%);
             animation: pulse-divider 4s ease-in-out infinite;
         }
+
         @keyframes pulse-divider {
-            0%, 100% { transform: scaleX(0.8); opacity: 0.5; }
-            50% { transform: scaleX(1.2); opacity: 1; }
+
+            0%,
+            100% {
+                transform: scaleX(0.8);
+                opacity: 0.5;
+            }
+
+            50% {
+                transform: scaleX(1.2);
+                opacity: 1;
+            }
         }
 
         /* Glitch effect on hover for section titles */
         .section-title:hover span {
             animation: glitch-text 0.3s ease-in-out;
         }
+
         @keyframes glitch-text {
-            0% { transform: translate(0); }
-            20% { transform: translate(-3px, 2px); filter: hue-rotate(90deg); }
-            40% { transform: translate(3px, -2px); filter: hue-rotate(-90deg); }
-            60% { transform: translate(-2px, -1px); }
-            80% { transform: translate(2px, 1px); filter: hue-rotate(45deg); }
-            100% { transform: translate(0); filter: hue-rotate(0deg); }
+            0% {
+                transform: translate(0);
+            }
+
+            20% {
+                transform: translate(-3px, 2px);
+                filter: hue-rotate(90deg);
+            }
+
+            40% {
+                transform: translate(3px, -2px);
+                filter: hue-rotate(-90deg);
+            }
+
+            60% {
+                transform: translate(-2px, -1px);
+            }
+
+            80% {
+                transform: translate(2px, 1px);
+                filter: hue-rotate(45deg);
+            }
+
+            100% {
+                transform: translate(0);
+                filter: hue-rotate(0deg);
+            }
         }
 
         /* Enhanced project card inner glow */
@@ -688,19 +731,25 @@
             border-radius: 16px;
             opacity: 0;
             transition: opacity 0.4s;
-            background: radial-gradient(600px circle at var(--mouse-x, 50%) var(--mouse-y, 50%), rgba(0,229,255,0.06), transparent 40%);
+            background: radial-gradient(600px circle at var(--mouse-x, 50%) var(--mouse-y, 50%), rgba(0, 229, 255, 0.06), transparent 40%);
             pointer-events: none;
         }
+
         .project-card:hover::after {
             opacity: 1;
         }
-        .project-card { position: relative; overflow: hidden; }
+
+        .project-card {
+            position: relative;
+            overflow: hidden;
+        }
 
         /* Floating particles for skills */
         .skill-pill {
             position: relative;
             overflow: hidden;
         }
+
         .skill-pill::before {
             content: '';
             position: absolute;
@@ -708,16 +757,20 @@
             left: -50%;
             width: 200%;
             height: 200%;
-            background: conic-gradient(from 0deg, transparent, rgba(0,229,255,0.1), transparent 30%);
+            background: conic-gradient(from 0deg, transparent, rgba(0, 229, 255, 0.1), transparent 30%);
             animation: rotate-shimmer 4s linear infinite;
             opacity: 0;
             transition: opacity 0.3s;
         }
+
         .skill-pill:hover::before {
             opacity: 1;
         }
+
         @keyframes rotate-shimmer {
-            100% { transform: rotate(360deg); }
+            100% {
+                transform: rotate(360deg);
+            }
         }
 
         /* Hero scroll indicator */
@@ -733,13 +786,15 @@
             gap: 8px;
             animation: float-indicator 2s ease-in-out infinite;
         }
+
         .scroll-indicator .mouse {
             width: 24px;
             height: 40px;
-            border: 2px solid rgba(0,229,255,0.4);
+            border: 2px solid rgba(0, 229, 255, 0.4);
             border-radius: 12px;
             position: relative;
         }
+
         .scroll-indicator .mouse::before {
             content: '';
             position: absolute;
@@ -752,6 +807,7 @@
             border-radius: 2px;
             animation: scroll-dot 1.5s ease-in-out infinite;
         }
+
         .scroll-indicator span {
             font-size: 0.65rem;
             color: var(--dim);
@@ -759,13 +815,29 @@
             text-transform: uppercase;
             font-family: var(--font-head);
         }
+
         @keyframes float-indicator {
-            0%, 100% { transform: translateX(-50%) translateY(0); }
-            50% { transform: translateX(-50%) translateY(10px); }
+
+            0%,
+            100% {
+                transform: translateX(-50%) translateY(0);
+            }
+
+            50% {
+                transform: translateX(-50%) translateY(10px);
+            }
         }
+
         @keyframes scroll-dot {
-            0% { top: 8px; opacity: 1; }
-            100% { top: 22px; opacity: 0; }
+            0% {
+                top: 8px;
+                opacity: 1;
+            }
+
+            100% {
+                top: 22px;
+                opacity: 0;
+            }
         }
 
         @media(max-width:768px) {
@@ -842,9 +914,11 @@
 
                 <a href="#projects" class="btn btn-primary">View Projects</a>
 
-                <a href="https://drive.google.com/uc?export=download&id=1aU6kHqaMaD9eH9AcKCSiSwD0VkbXZ6_d" class="btn btn-outline" target="_blank" rel="noopener noreferrer">
-                    <svg viewBox="0 0 24 24" style="width: 16px; height: 16px; margin-right: 8px; fill: currentColor; vertical-align: middle; margin-top: -2px;">
-                        <path d="M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z"/>
+                <a href="https://drive.google.com/uc?export=download&id=1aU6kHqaMaD9eH9AcKCSiSwD0VkbXZ6_d"
+                    class="btn btn-outline" target="_blank" rel="noopener noreferrer">
+                    <svg viewBox="0 0 24 24"
+                        style="width: 16px; height: 16px; margin-right: 8px; fill: currentColor; vertical-align: middle; margin-top: -2px;">
+                        <path d="M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z" />
                     </svg>
                     Resume
                 </a>
@@ -947,11 +1021,14 @@
 
                 <div class="tags"><span class="tag">SaaS</span><span class="tag">AI</span><span class="tag">Full
                         Stack</span><span class="tag">REST API</span></div>
-                
+
                 <div style="margin-top: 20px;">
-                    <a href="https://recruitflow-frontend-whz7.onrender.com/" target="_blank" rel="noopener noreferrer" class="btn btn-outline" style="padding: 8px 16px; font-size: 0.85rem;">
-                        <svg viewBox="0 0 24 24" style="width: 14px; height: 14px; margin-right: 6px; fill: currentColor; vertical-align: middle; margin-top: -2px;">
-                            <path d="M19 19H5V5h7V3H5c-1.11 0-2 .9-2 2v14c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2v-7h-2v7zM14 3v2h3.59l-9.83 9.83 1.41 1.41L19 6.41V10h2V3h-7z"/>
+                    <a href="https://recruitflow-frontend-whz7.onrender.com/" target="_blank" rel="noopener noreferrer"
+                        class="btn btn-outline" style="padding: 8px 16px; font-size: 0.85rem;">
+                        <svg viewBox="0 0 24 24"
+                            style="width: 14px; height: 14px; margin-right: 6px; fill: currentColor; vertical-align: middle; margin-top: -2px;">
+                            <path
+                                d="M19 19H5V5h7V3H5c-1.11 0-2 .9-2 2v14c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2v-7h-2v7zM14 3v2h3.59l-9.83 9.83 1.41 1.41L19 6.41V10h2V3h-7z" />
                         </svg>
                         Live Demo
                     </a>
@@ -984,9 +1061,13 @@
                         class="tag">TypeScript</span><span class="tag">Full Stack</span></div>
 
                 <div style="margin-top: 20px;">
-                    <a href="https://ai-website-builder-frontend-78nf.onrender.com/" target="_blank" rel="noopener noreferrer" class="btn btn-outline" style="padding: 8px 16px; font-size: 0.85rem;">
-                        <svg viewBox="0 0 24 24" style="width: 14px; height: 14px; margin-right: 6px; fill: currentColor; vertical-align: middle; margin-top: -2px;">
-                            <path d="M19 19H5V5h7V3H5c-1.11 0-2 .9-2 2v14c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2v-7h-2v7zM14 3v2h3.59l-9.83 9.83 1.41 1.41L19 6.41V10h2V3h-7z"/>
+                    <a href="https://ai-website-builder-frontend-78nf.onrender.com/" target="_blank"
+                        rel="noopener noreferrer" class="btn btn-outline"
+                        style="padding: 8px 16px; font-size: 0.85rem;">
+                        <svg viewBox="0 0 24 24"
+                            style="width: 14px; height: 14px; margin-right: 6px; fill: currentColor; vertical-align: middle; margin-top: -2px;">
+                            <path
+                                d="M19 19H5V5h7V3H5c-1.11 0-2 .9-2 2v14c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2v-7h-2v7zM14 3v2h3.59l-9.83 9.83 1.41 1.41L19 6.41V10h2V3h-7z" />
                         </svg>
                         Live Demo
                     </a>
@@ -1086,8 +1167,8 @@
                             d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z" />
                     </svg>+91 70818 33829</a>
 
-                <a href="https://linkedin.com/in/aditya-pratap-singh" target="_blank" class="contact-link"><svg
-                        viewBox="0 0 24 24">
+                <a href="https://www.linkedin.com/in/aditya-pratap-singh-29885a291/" target="_blank"
+                    class="contact-link"><svg viewBox="0 0 24 24">
                         <path
                             d="M19 3a2 2 0 012 2v14a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h14m-.5 15.5v-5.3a3.26 3.26 0 00-3.26-3.26c-.85 0-1.84.52-2.32 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 011.4 1.4v4.93h2.79M6.88 8.56a1.68 1.68 0 001.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 00-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77z" />
                     </svg>linkedin.com/in/aditya-pratap-singh</a>
@@ -1123,8 +1204,8 @@
         (function animCur() {
             cx += (mx - cx) * .15; cy += (my - cy) * .15; dx += (mx - dx) * .3; dy += (my - dy) * .3;
 
-            cur.style.left = cx - 10 + 'px'; cur.style.top = cy - 10 + 'px'; dot.style.left = dx - 3 + 'px'; dot.style.top = dy - 3 + 'px'; 
-            
+            cur.style.left = cx - 10 + 'px'; cur.style.top = cy - 10 + 'px'; dot.style.left = dx - 3 + 'px'; dot.style.top = dy - 3 + 'px';
+
             const tr = document.getElementById('cursor-trail');
             tr.style.left = cx - 4 + 'px'; tr.style.top = cy - 4 + 'px';
             tr.style.opacity = '0.5';
@@ -1144,8 +1225,8 @@
         document.querySelectorAll('.btn').forEach(btn => {
             btn.addEventListener('mousemove', e => {
                 const r = btn.getBoundingClientRect();
-                const x = e.clientX - r.left - r.width/2;
-                const y = e.clientY - r.top - r.height/2;
+                const x = e.clientX - r.left - r.width / 2;
+                const y = e.clientY - r.top - r.height / 2;
                 btn.style.transform = `translate(${x * 0.3}px, ${y * 0.3}px)`;
             });
             btn.addEventListener('mouseleave', () => {
@@ -1168,7 +1249,7 @@
 
             // Torus Knot Wireframe
             const tkGeo = new THREE.TorusKnotGeometry(8, 2.5, 100, 16);
-            const tkMat = new THREE.LineBasicMaterial({color: 0x0080ff, transparent: true, opacity: 0.15});
+            const tkMat = new THREE.LineBasicMaterial({ color: 0x0080ff, transparent: true, opacity: 0.15 });
             const tk = new THREE.LineSegments(new THREE.WireframeGeometry(tkGeo), tkMat);
             scene.add(tk);
 
@@ -1180,8 +1261,8 @@
 
             const mat = new THREE.PointsMaterial({ color: 0x00e5ff, size: .08, transparent: true, opacity: .8, blending: THREE.AdditiveBlending });
 
-            const pts = new THREE.Points(geo, mat); scene.add(pts); 
-            
+            const pts = new THREE.Points(geo, mat); scene.add(pts);
+
             // Constellation Lines
             const linesMat = new THREE.LineBasicMaterial({ color: 0x00e5ff, transparent: true, opacity: 0.2 });
             const linesGeo = new THREE.BufferGeometry();
@@ -1203,14 +1284,14 @@
                     if (Math.abs(p[i]) > 15) vel[i] *= -1; if (Math.abs(p[i + 1]) > 15) vel[i + 1] *= -1; if (Math.abs(p[i + 2]) > 15) vel[i + 2] *= -1
                 }
 
-                geo.attributes.position.needsUpdate = true; 
-                
+                geo.attributes.position.needsUpdate = true;
+
                 const linePos = [];
-                for(let i=0; i<count; i++){
-                    for(let j=i+1; j<count; j++){
-                        const dx = p[i*3]-p[j*3], dy = p[i*3+1]-p[j*3+1], dz = p[i*3+2]-p[j*3+2];
-                        if(dx*dx + dy*dy + dz*dz < 15) {
-                            linePos.push(p[i*3],p[i*3+1],p[i*3+2], p[j*3],p[j*3+1],p[j*3+2]);
+                for (let i = 0; i < count; i++) {
+                    for (let j = i + 1; j < count; j++) {
+                        const dx = p[i * 3] - p[j * 3], dy = p[i * 3 + 1] - p[j * 3 + 1], dz = p[i * 3 + 2] - p[j * 3 + 2];
+                        if (dx * dx + dy * dy + dz * dz < 15) {
+                            linePos.push(p[i * 3], p[i * 3 + 1], p[i * 3 + 2], p[j * 3], p[j * 3 + 1], p[j * 3 + 2]);
                         }
                     }
                 }
@@ -1218,7 +1299,7 @@
 
                 pts.rotation.x += (mouseY * .2 - pts.rotation.x) * .05; pts.rotation.y += (mouseX * .2 - pts.rotation.y) * .05;
                 linesMesh.rotation.copy(pts.rotation);
-                
+
                 tk.rotation.x += 0.005; tk.rotation.y += 0.005;
 
                 renderer.render(scene, camera)
@@ -1359,12 +1440,12 @@
         document.querySelectorAll('[data-count]').forEach(el => countObs.observe(el));
 
         // Floating Orbs for Skills section
-        (function() {
+        (function () {
             const canvas = document.getElementById('orbs-canvas');
-            if(!canvas) return;
+            if (!canvas) return;
             const ctx = canvas.getContext('2d');
             let w, h, orbs = [];
-            
+
             function resize() {
                 const rect = document.getElementById('skills').getBoundingClientRect();
                 w = canvas.width = rect.width;
@@ -1372,8 +1453,8 @@
             }
             window.addEventListener('resize', resize);
             resize();
-            
-            for(let i=0; i<15; i++) {
+
+            for (let i = 0; i < 15; i++) {
                 orbs.push({
                     x: Math.random() * w, y: Math.random() * h,
                     vx: (Math.random() - 0.5) * 0.5, vy: (Math.random() - 0.5) * 0.5,
@@ -1381,19 +1462,19 @@
                     hue: Math.random() > 0.5 ? 190 : 210
                 });
             }
-            
+
             function draw() {
                 ctx.clearRect(0, 0, w, h);
                 orbs.forEach(o => {
                     o.x += o.vx; o.y += o.vy;
-                    if(o.x < -o.r) o.x = w + o.r; if(o.x > w + o.r) o.x = -o.r;
-                    if(o.y < -o.r) o.y = h + o.r; if(o.y > h + o.r) o.y = -o.r;
-                    
+                    if (o.x < -o.r) o.x = w + o.r; if (o.x > w + o.r) o.x = -o.r;
+                    if (o.y < -o.r) o.y = h + o.r; if (o.y > h + o.r) o.y = -o.r;
+
                     const grad = ctx.createRadialGradient(o.x, o.y, 0, o.x, o.y, o.r);
                     grad.addColorStop(0, `hsla(${o.hue}, 100%, 50%, 0.1)`);
                     grad.addColorStop(1, `hsla(${o.hue}, 100%, 50%, 0)`);
                     ctx.fillStyle = grad;
-                    ctx.beginPath(); ctx.arc(o.x, o.y, o.r, 0, Math.PI*2); ctx.fill();
+                    ctx.beginPath(); ctx.arc(o.x, o.y, o.r, 0, Math.PI * 2); ctx.fill();
                 });
                 requestAnimationFrame(draw);
             }
@@ -1405,7 +1486,7 @@
             const scrolled = window.scrollY;
             document.querySelectorAll('.section-3d').forEach(sec => {
                 const rect = sec.getBoundingClientRect();
-                const center = rect.top + rect.height/2;
+                const center = rect.top + rect.height / 2;
                 const viewCenter = window.innerHeight / 2;
                 const diff = center - viewCenter;
                 const rotateX = diff * -0.01;
